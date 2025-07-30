@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="PEDIATRICS Assessment"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="Growth and Development Stages "
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdGrowthDev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="*Family/Caregiver Interaction"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdFamily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        style="@style/NursingInsideContainerTextFull"
+        android:layout_gravity="center_vertical"
+        android:text="Equipment &amp; Procedures  "
+        android:layout_marginTop="@dimen/dp_10"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="*Suction Machine"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdSuction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="Calculations of Pediatric Dosages"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/lytCalculator"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_alignParentLeft="true"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:id="@+id/lytCalculator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdCalculationsof"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="*Ventilator "
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdVentilator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="*Tracheostomy Management"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdTracheostomy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="4dp"
+            android:text="*Cough Assist"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/tdCoughA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="*Pediatric Ambu"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdPediatric"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            style="@style/NursingInsideContainerTextFull"
+            android:layout_gravity="center_vertical"
+            android:text="TPN pump"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:textStyle="normal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/rdTpn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp" >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    style="@style/DailyFlowInsideContainerText"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+
+                <RadioButton
+                    style="@style/DailyFlowInsideContainerText"
+                    android:layout_width="match_parent"
+                    android:buttonTint="@color/colorPrimary"
+                    android:layout_gravity="center_horizontal"
+                    android:checked="false" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

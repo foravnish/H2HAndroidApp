@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/formBackground"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activities.DailyFlowFormActivity">
+
+    <RelativeLayout style="@style/DailyFlowToolbar">
+
+        <ImageView
+            style="@style/DailyFlowToolbarIcon"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/daily_flow_sheet"
+            android:id="@+id/pateint_Form_Title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/DailyFlowMainContainer"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/DailyFlowInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/DailyFlowInsideContainerHeader"
+                    android:text="@string/person_contacts"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    style="@style/DailyFlowInsideContainerInside"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/name" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="@string/dob" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="@string/date" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/et_dob"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                        <EditText
+                            android:id="@+id/et_date"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/DailyFlowInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/DailyFlowInsideContainerHeader"
+                    android:text="@string/received_report_form"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    style="@style/DailyFlowInsideContainerInside"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/received_report_from" />
+
+                        <EditText
+                            android:id="@+id/et_received_report_from"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLines="1"
+                            android:singleLine="true" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zone_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_right" />
+
+                        <TextView
+                            android:id="@+id/tv_tz_1"
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zone_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_right" />
+
+                        <TextView
+                            android:id="@+id/tv_tz_2"
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zone_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_right" />
+
+                        <TextView
+                            android:id="@+id/tv_tz_3"
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zone_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_right" />
+
+                        <TextView
+                            android:id="@+id/tv_tz_4"
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_zone_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dp_25"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/ic_arrow_right" />
+
+                        <TextView
+                            android:id="@+id/tv_tz_5"
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/DailyFlowInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/DailyFlowInsideContainerHeader"
+                    android:text="@string/daily_notes"
+                    android:textColor="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:visibility="gone"
+                    android:layout_marginBottom="-10dp"/>
+                <LinearLayout
+                    style="@style/DailyFlowInsideContainerInside"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_daily_flow_notes"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:background="#f1fcff"
+                        android:maxLength="2000"
+                        android:inputType="textMultiLine"
+                        android:minHeight="@dimen/dp_150" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/countdailynotes"
+                        android:textColor="@color/black"
+                        android:text="2000/0"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                style="@style/DailyFlowInsideContainer"
+                android:visibility="visible"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dp_10"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/stime"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/et_stime"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dp_10"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/etime"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/et_time"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:padding="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/duration"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/et_duration"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:inputType="none"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/DailyFlowInsideContainerSignature"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Signature"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/view_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_signature"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/DailyFlowInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/DailyFlowInsideContainerHeader"
+                    android:text="@string/respiratory_assessment_score_ras"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    style="@style/DailyFlowInsideContainerInside"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:text="" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="0" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="1" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="2" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="3" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_5"
+
+                        android:background="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_7"
+                        android:layout_marginLeft="@dimen/dp_7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/resp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="@string/_20" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="21-25 " />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="26-50 " />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText2"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text=">50" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_5"
+
+                        android:background="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_7"
+                        android:layout_marginLeft="@dimen/dp_7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/breath_sounds"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="No wheeze with good air exchange" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="Late exp wheeze with stethoscope" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="Entire exp or insp with/without stethoscope" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="Loud wheeze without stethoscope" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:background="@color/black"/>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_7"
+                        android:layout_marginLeft="@dimen/dp_7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/fio2"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="None" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="0-0.5L" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="0.5-1.5L" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="1.6-3L" />
+                    </LinearLayout>
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/dp_5"
+                        android:layout_marginRight="@dimen/dp_5"
+                        android:background="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_7"
+                        android:layout_marginLeft="@dimen/dp_7"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:text="Retractions"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="None" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="1 Location" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="2 Locations" />
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText1"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="3 Locations" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <!--
+                                <Button
+                                    android:id="@+id/btn_submit_later1"
+                                    android:layout_height="wrap_content"
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_marginEnd="@dimen/dp_10"
+                                    android:layout_marginRight="@dimen/dp_10"
+                                    android:visibility="gone"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/background_login_button"
+                                    android:singleLine="true"
+                                    android:text="Patient 2"
+                                    android:textColor="@color/white" />
+                -->
+
+                <Button
+                    android:id="@+id/btn_submit_later"
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_login_button"
+                    android:singleLine="true"
+                    android:text="Submit Later"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_submit"
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:background="@drawable/background_login_button"
+                    android:text="Save"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

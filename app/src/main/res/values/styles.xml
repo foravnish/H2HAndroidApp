@@ -1,0 +1,639 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:windowOptOutEdgeToEdgeEnforcement" tools:ignore="NewApi">true</item>
+
+    </style>
+
+
+    <style name="StyleAdapterCardView" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardElevation">@dimen/dp_3</item>
+        <item name="cardPreventCornerOverlap">false</item>
+        <item name="android:layout_marginRight">@dimen/dp_5</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:layout_marginTop">@dimen/dp_7</item>
+        <item name="android:layout_marginBottom">@dimen/dp_7</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+
+    <!-- Login Page Styles -->
+
+    <style name="LoginLogo">
+        <item name="android:layout_height">@dimen/dp_100</item>
+        <item name="android:layout_width">@dimen/dp_150</item>
+        <item name="android:src">@drawable/logo</item>
+    </style>
+
+    <style name="LoginMainView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_30</item>
+        <item name="android:layout_marginRight">@dimen/dp_30</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+    </style>
+
+    <style name="LoginButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_40</item>
+        <item name="android:layout_marginRight">@dimen/dp_40</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+    </style>
+
+    <style name="LoginEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_20</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <style name="LoginFieldsLogo">
+        <item name="android:layout_height">@dimen/dp_15</item>
+        <item name="android:layout_width">@dimen/dp_15</item>
+    </style>
+
+
+    <!-- Signup Page Styles -->
+
+    <style name="SignupLogo">
+        <item name="android:layout_height">@dimen/dp_100</item>
+        <item name="android:layout_width">@dimen/dp_150</item>
+        <item name="android:layout_marginBottom">@dimen/dp_10</item>
+        <item name="android:src">@drawable/logo</item>
+    </style>
+
+    <style name="SignupMainView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_30</item>
+        <item name="android:layout_marginRight">@dimen/dp_30</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+    </style>
+
+
+    <!-- Home Styles -->
+
+    <style name="HomeToolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="HomeHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="background">@color/colorPrimary</item>
+    </style>
+
+    <style name="HomeTitle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_25</item>
+        <item name="android:paddingLeft">@dimen/dp_15</item>
+        <item name="android:paddingRight">@dimen/dp_15</item>
+        <item name="android:paddingTop">@dimen/dp_10</item>
+        <item name="android:paddingBottom">@dimen/dp_10</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="HomeTabLayout">
+        <item name="android:layout_height">@dimen/dp_50</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+
+    <!-- TabLayout styles -->
+
+    <style name="HomeTabLayoutIcon">
+        <item name="android:layout_width">@dimen/dp_20</item>
+        <item name="android:layout_height">@dimen/dp_20</item>
+        <item name="android:layout_marginEnd">@dimen/dp_5</item>
+        <item name="android:layout_marginRight">@dimen/dp_5</item>
+    </style>
+
+    <style name="HomeTabLayoutTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!-- Home Fragment Styles   -->
+
+    <style name="HomeFragmentLog">
+        <item name="android:layout_width">@dimen/dp_200</item>
+        <item name="android:layout_height">@dimen/dp_150</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:src">@drawable/logo</item>
+    </style>
+
+    <style name="HomeFragmentButton">
+        <item name="android:layout_width">@dimen/dp_200</item>
+        <item name="android:layout_height">@dimen/dp_80</item>
+    </style>
+
+    <!-- My Account Fragment Styles -->
+
+    <style name="MyAccountProfileImage">
+        <item name="android:layout_width">@dimen/dp_90</item>
+        <item name="android:layout_height">@dimen/dp_90</item>
+    </style>
+
+    <style name="MyAccountItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:background">@drawable/background_my_account_item</item>
+    </style>
+
+    <style name="MyAccountItemIcon">
+        <item name="android:layout_width">@dimen/dp_30</item>
+        <item name="android:layout_height">@dimen/dp_30</item>
+    </style>
+
+    <style name="MyAccountItemText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:layout_marginStart">@dimen/dp_5</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
+
+    <!-- Edit profile styles   -->
+
+
+    <style name="EditProfilePictureLayout">
+        <item name="android:layout_height">@dimen/dp_160</item>
+        <item name="android:layout_width">@dimen/dp_130</item>
+        <item name="android:layout_margin">@dimen/dp_15</item>
+    </style>
+
+    <style name="EditProfileLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+    </style>
+
+    <style name="EditProfileHeading">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+    </style>
+
+    <style name="EditProfileEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/black2</item>
+        <item name="android:layout_marginTop">@dimen/dp_5</item>
+        <item name="android:background">@drawable/background_my_account_item</item>
+        <item name="android:padding">@dimen/dp_7</item>
+    </style>
+
+
+    <!-- form daily flow style -->
+
+
+    <style name="DailyFlowToolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="DailyFlowToolbarIcon">
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:src">@drawable/white_logo</item>
+    </style>
+
+    <style name="DailyFlowMainContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <style name="DailyFlowInsideContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_table_header</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerInside">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_10</item>
+        <item name="android:paddingTop">@dimen/dp_15</item>
+        <item name="android:paddingBottom">@dimen/dp_15</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_edit_text</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerText1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerText2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="DailyFlowInsideContainerSignature">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+    </style>
+
+    <style name="DailyFlowChildContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <style name="DailyFlowButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_50</item>
+        <item name="android:paddingLeft">@dimen/dp_50</item>
+    </style>
+
+
+    <!-- Nursing Assessment Design -->
+
+    <style name="NursingToolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="NursingToolbarIcon">
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:src">@drawable/white_logo</item>
+    </style>
+
+    <style name="NursingToolbarText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="NursingMainContainer">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <style name="NursingInsideContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="NursingInsideContainerHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_table_header</item>
+    </style>
+
+    <style name="NursingInsideContainerInside">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_10</item>
+        <item name="android:paddingTop">@dimen/dp_15</item>
+        <item name="android:paddingBottom">@dimen/dp_15</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="NursingInsideContainerText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+
+    <style name="NursingInsideContainerTextFull">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_2</item>
+    </style>
+
+    <style name="NursingInsideContainerText1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="NursingInsideContainerText2">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:padding">@dimen/dp_2</item>
+    </style>
+
+    <style name="NursingInsideContainerEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:inputType">text</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_edit_text</item>
+    </style>
+
+    <style name="NursingChildContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_25</item>
+        <item name="android:paddingTop">@dimen/dp_7</item>
+        <item name="android:paddingBottom">@dimen/dp_7</item>
+        <item name="android:paddingRight">@dimen/dp_7</item>
+        <item name="android:background">#f1fcff</item>
+    </style>
+
+    <style name="NursingInsideContainerSignature">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+    </style>
+
+    <style name="NursingButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_50</item>
+        <item name="android:paddingLeft">@dimen/dp_50</item>
+    </style>
+
+
+    <!-- Weekly Flow Sheet -->
+
+    <style name="WeeklyToolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="WeeklyToolbarIcon">
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:src">@drawable/white_logo</item>
+    </style>
+
+    <style name="WeeklyToolbarText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="WeeklyMainContainer">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <style name="WeeklyInsideContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="WeeklyInsideContainerHeader">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_table_header</item>
+    </style>
+
+    <style name="WeeklyInsideContainerInside">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_10</item>
+        <item name="android:paddingTop">@dimen/dp_15</item>
+        <item name="android:paddingBottom">@dimen/dp_15</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="WeeklyInsideContainerText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="WeeklyInsideContainerText1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="WeeklyChildContainer">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/dp_25</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:background">#f1fcff</item>
+    </style>
+
+    <style name="WeeklyInsideContainerEditText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:inputType">text</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_edit_text</item>
+    </style>
+
+    <style name="WeeklyInsideContainerEditText1">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:padding">@dimen/dp_2</item>
+        <item name="android:minWidth">@dimen/dp_120</item>
+        <item name="android:inputType">text</item>
+        <item name="android:gravity">top</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_edit_text</item>
+    </style>
+
+    <style name="WeeklyInsideContainerSignature">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_margin">@dimen/dp_10</item>
+    </style>
+
+    <style name="WeeklyButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_50</item>
+        <item name="android:paddingLeft">@dimen/dp_50</item>
+    </style>
+
+
+    <!--   -->
+
+
+    <!-- NORMAL HEADER STYLE -->
+
+    <style name="Toolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="ToolbarIcon">
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:src">@drawable/white_logo</item>
+    </style>
+
+    <style name="ToolbarText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+
+    <!--    -->
+
+
+    <!-- CONTACT US STYLES  -->
+
+    <style name="ContactToolbar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_5</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="ContactToolbarIcon">
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:src">@drawable/white_logo</item>
+    </style>
+
+    <style name="ContactToolbarText">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_20</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="ContactUsFieldHeading">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">@dimen/dp_10</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/background_daily_flow_sheet_table_header</item>
+    </style>
+
+
+    <!--      THEMES    -->
+
+    <style name="datePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:descendantFocusability">blocksDescendants</item>
+    </style>
+</resources>

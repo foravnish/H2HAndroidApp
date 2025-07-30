@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/formBackground"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".activities.DailyFlowSheetTimeZoneForm">
+
+    <RelativeLayout style="@style/DailyFlowToolbar">
+
+        <ImageView
+            style="@style/DailyFlowToolbarIcon"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/daily_flow_sheet"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/txtOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            android:textSize="@dimen/sp_37"
+            android:text="&#8942;"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/DailyFlowMainContainer"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/DailyFlowInsideContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/temperature" />
+
+                    <EditText
+                        android:id="@+id/et_temp"
+                        android:maxLength="600"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/pulse" />
+
+                    <EditText
+                        android:id="@+id/et_pulse"
+                        android:maxLength="600"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/spo2" />
+
+                    <EditText
+                        android:id="@+id/et_sp02"
+                        android:maxLength="600"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="#DEEAF6"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:background="#DEEAF6"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/oxygen"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_oxygen"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/respiration"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_respiration"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLength="600"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/lung_sounds"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_lung_sound"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLength="600"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/work_of_breathing"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_work_of_breathe"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLength="600"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/ras_score"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_ras_score"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/tracheostomy"
+                        android:textStyle="normal" />
+
+                    <EditText
+                        android:id="@+id/et_tracheostomy"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:maxLength="600"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="#FBE4D5"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/intervention"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_intervention"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:maxLength="600"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:visibility="gone"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/intervention_time"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_intervention_time"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:maxLength="600"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/DailyFlowInsideContainerText"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/quantity"
+                                android:textStyle="normal" />
+
+                            <EditText
+                                android:id="@+id/et_quantity"
+                                android:maxLength="600"
+                                style="@style/DailyFlowInsideContainerEditText"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/DailyFlowInsideContainerText"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/color"
+                                android:textStyle="normal" />
+
+                            <EditText
+                                android:id="@+id/et_color"
+                                style="@style/DailyFlowInsideContainerEditText"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:maxLength="600"
+                                android:layout_marginLeft="5dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/DailyFlowInsideContainerText"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/consistency"
+                                android:textStyle="normal" />
+
+                            <EditText
+                                android:id="@+id/et_consistency"
+                                android:maxLength="600"
+                                style="@style/DailyFlowInsideContainerEditText"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/intervention_outcome"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_intervention_outcome"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLength="600"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/bloodglucose"
+                            android:textStyle="normal" />
+
+                        <EditText
+                            android:id="@+id/et_blood_glucose"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:maxLength="3000"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="#DEEAF6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/nutrition" />
+
+                        <EditText
+                            android:id="@+id/et_nutrition"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/input" />
+
+                        <EditText
+                            android:id="@+id/et_input"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/g_tube_site" />
+
+                        <EditText
+                            android:id="@+id/et_g_tube_site"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/output" />
+
+                        <EditText
+                            android:id="@+id/et_outcome"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/vent_Decompress_Abd" />
+
+                        <CheckBox
+                            android:id="@+id/et_vent_decompress_abd"
+                            android:layout_width="wrap_content"
+                            android:buttonTint="@color/black"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/position" />
+
+                    <EditText
+                        android:id="@+id/et_position"
+                        android:maxLength="600"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/assist_independent" />
+
+                    <RadioGroup
+                        android:id="@+id/et_assist"
+                        android:layout_width="@dimen/dp_200"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" >
+                        <RadioButton
+                            android:text="Full Assist"
+                            android:layout_width="match_parent"
+                            style="@style/DailyFlowInsideContainerText"
+                            android:buttonTint="@color/black"
+                            android:id="@+id/radioButton1"
+                            android:layout_gravity="center_horizontal"
+                            android:checked="false"
+
+                            />
+
+                        <RadioButton
+                            style="@style/DailyFlowInsideContainerText"
+                            android:text="Partial Assist"
+                            android:layout_width="match_parent"
+                            android:buttonTint="@color/black"
+                            android:id="@+id/radioButton2"
+                            android:layout_gravity="center_horizontal"
+                            android:checked="false" />
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            style="@style/DailyFlowInsideContainerText"
+                            android:text="Independent"
+                            android:buttonTint="@color/black"
+                            android:id="@+id/radioButton3"
+                            android:layout_gravity="center_horizontal"
+                            android:checked="false"
+                            />
+                    </RadioGroup>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="Activity" />
+
+                    <EditText
+                        android:id="@+id/et_Activity"
+                        android:maxLength="600"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+
+                    <CheckBox
+                        android:id="@+id/et_participating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/black"
+                        android:text="Skin Integrity Check"
+                        android:buttonTint="@color/black"
+                        android:layout_marginLeft="5dp" />
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/braces" />
+
+                    <RadioGroup
+                        android:id="@+id/et_braces"
+                        android:layout_width="@dimen/dp_200"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" >
+                        <RadioButton
+                            android:text="ON"
+                            android:layout_width="match_parent"
+                            style="@style/DailyFlowInsideContainerText"
+                            android:buttonTint="@color/black"
+                            android:id="@+id/radioButton4"
+                            android:layout_gravity="center_horizontal"
+                            android:checked="false"
+
+                            />
+
+                        <RadioButton
+                            style="@style/DailyFlowInsideContainerText"
+                            android:text="OFF"
+                            android:layout_width="match_parent"
+                            android:buttonTint="@color/black"
+                            android:id="@+id/radioButton5"
+                            android:layout_gravity="center_horizontal"
+                            android:checked="false" />
+                    </RadioGroup>
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/stretched" />
+
+                    <CheckBox
+                        android:id="@+id/et_stretched"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:buttonTint="@color/black"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="#FBE4D5"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/medication" />
+
+                        <EditText
+                            android:id="@+id/et_medication"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/DailyFlowInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/tpn" />
+
+                        <EditText
+                            android:id="@+id/et_monitoring_tpn"
+                            android:maxLength="600"
+                            style="@style/DailyFlowInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginLeft="5dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/teach" />
+
+                    <CheckBox
+                        android:id="@+id/et_teach"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/black"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+
+                </LinearLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/DailyFlowInsideContainerText"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/report_given_to" />
+
+                    <EditText
+                        android:id="@+id/et_report_given_to"
+                        android:maxLength="600"
+                        style="@style/DailyFlowInsideContainerEditText"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btn_change_time_zone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_login_button"
+                    android:text="Change Time Zone"
+                    android:textColor="@color/white"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_login_button"
+                    android:text="Save"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

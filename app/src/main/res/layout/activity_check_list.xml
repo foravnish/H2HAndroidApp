@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout style="@style/Toolbar">
+
+        <ImageView
+            style="@style/ToolbarIcon"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            style="@style/ToolbarText"
+            android:layout_centerVertical="true"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_10">
+            <TextView
+                style="@style/NursingInsideContainerText"
+                android:layout_gravity="center_vertical"
+                android:text="PROFICIENCY SCALE"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/NursingInsideContainerText1"
+                android:layout_gravity="center_vertical"
+                android:text="1. No Experience"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/NursingInsideContainerText1"
+                android:layout_gravity="center_vertical"
+                android:text="2. Need Training"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/NursingInsideContainerText1"
+                android:layout_gravity="center_vertical"
+                android:text="3. Able to perform with supervision"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/NursingInsideContainerText1"
+                android:layout_gravity="center_vertical"
+                android:text="4. Able to perform independently"
+                android:textStyle="bold" />
+
+
+            <include
+                layout="@layout/general_skil" />
+
+            <include
+                layout="@layout/pediatrics" />
+
+            <include
+                layout="@layout/care_of" />
+            <include
+                layout="@layout/age_spacefic" />
+
+            <include
+                layout="@layout/careofpatient" />
+
+            <include
+                layout="@layout/pulmonary" />
+            <include
+                layout="@layout/careofpatient2" />
+
+            <include
+                layout="@layout/neurology" />
+            <include
+                layout="@layout/equpment" />
+
+            <include
+                layout="@layout/gestroin" />
+
+            <include
+                layout="@layout/renal" />
+
+            <include
+                layout="@layout/endocrine" />
+            <include
+                layout="@layout/wound" />
+            <include
+                layout="@layout/psychai" />
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dp_10"
+                android:background="@drawable/background_login_button"
+                android:text="Submit"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

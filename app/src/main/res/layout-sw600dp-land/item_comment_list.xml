@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lnbackground"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white">
+
+
+    <TextView
+        android:id="@+id/edtMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        android:focusableInTouchMode="true"
+        android:gravity="start|top"
+        android:hint="add text"
+        android:layout_toLeftOf="@id/imgDelete"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dp_15" />
+
+
+    <ImageView
+        android:id="@+id/imgDelete"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/ripple_background_lite"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/dp_4"
+        app:srcCompat="@drawable/ic_close"
+        android:tint="@color/black" />
+
+
+</RelativeLayout>
+

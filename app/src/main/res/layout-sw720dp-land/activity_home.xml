@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activities.HomeActivity">
+
+    <RelativeLayout style="@style/HomeToolbar">
+
+<!--        <com.asksira.loopingviewpager.LoopingViewPager-->
+<!--            android:id="@+id/loopingViewPager"-->
+<!--            style="@style/HomeHeader"-->
+<!--            app:autoScroll="true"-->
+<!--            app:isInfinite="true"-->
+<!--            app:scrollInterval="3000" />-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/HomeTabLayout"
+            android:layout_alignParentBottom="true"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabMaxWidth="0dp"
+            app:tabMode="fixed" />
+
+        <com.h2h.medical.helper.NonSwipeableViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tabLayout" />
+    </RelativeLayout>
+</LinearLayout>

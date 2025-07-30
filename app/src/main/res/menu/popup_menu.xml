@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/copy1"
+        android:title="Copy form 07:00 - 09:59" />
+
+    <item
+        android:id="@+id/copy2"
+        android:title="Copy form 10:00 - 11:59" />
+
+    <item
+        android:id="@+id/copy3"
+        android:title="Copy form 12:00 - 13:59" />
+
+    <item
+        android:id="@+id/copy4"
+        android:title="Copy form 14:00 - 15:59" />
+
+</menu>

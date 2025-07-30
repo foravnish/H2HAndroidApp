@@ -1,0 +1,1710 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/formBackground"
+    android:orientation="vertical"
+    tools:context=".activities.NursingAssessmentFormActivity">
+
+    <RelativeLayout style="@style/NursingToolbar">
+
+        <ImageView
+            style="@style/NursingToolbarIcon"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            style="@style/NursingToolbarText"
+            android:layout_centerVertical="true"
+            android:text="@string/nursing_assessment"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            style="@style/NursingMainContainer"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/NursingInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/NursingInsideContainerHeader"
+                    android:text="@string/person_contacts"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    style="@style/NursingInsideContainerInside"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/NursingInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/name" />
+
+                        <TextView
+                            style="@style/NursingInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="@string/dob" />
+
+                        <TextView
+                            style="@style/NursingInsideContainerText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:text="@string/date" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/et_name"
+                            style="@style/NursingInsideContainerEditText"
+                            android:layout_gravity="center_vertical" />
+
+                        <EditText
+                            android:id="@+id/et_dob"
+                            style="@style/NursingInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:inputType="number"
+                            android:maxLines="1"
+                            android:layout_marginTop="@dimen/dp_5" />
+
+                        <EditText
+                            android:id="@+id/et_date"
+                            style="@style/NursingInsideContainerEditText"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/dp_5"
+                            tools:ignore="TextFields" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/NursingInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/NursingInsideContainerHeader"
+                    android:text="@string/nursing_assessment"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    style="@style/NursingInsideContainerInside"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_neurological"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_arrow_right" />
+
+                            <TextView
+                                style="@style/NursingInsideContainerText1"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/neurological"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_child_neurological"
+                            style="@style/NursingChildContainer"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_alert_amp_oriented_x3" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_behaviour_appropriate_to_situation" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_active_rom_of_all_extremities" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_speech_appropriate" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_perrl" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_reflexes_intact_gag_swallow_blink_cough" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_wnl_neurological"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/wnl"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_exception_neurological"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/exceptions"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_exception_neurological"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_pulmonary"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_arrow_right" />
+
+                            <TextView
+                                style="@style/NursingInsideContainerText1"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/pulmonary"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_child_pulmonary"
+                            style="@style/NursingChildContainer"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_respirations_unlabored_amp_regular" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_bbs_clear" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_symmetrical_chest_expansion" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_nail_beds_pink" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_wnl_pulmonary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/wnl"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_exception_pulmonary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/exceptions"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_exception_pulmonary"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_tracheostomy_pulmonary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/tracheostomy"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_o2_pulmonary"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/o2_l_min_rate_cannula_mask"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_o2_pulmonary"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_cardiovascular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_arrow_right" />
+
+                            <TextView
+                                style="@style/NursingInsideContainerText1"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/cardiovascular"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_child_cardiovascular"
+                            style="@style/NursingChildContainer"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_radial_pedial_pulses_regular_strong_amp_palpable_bilaterally" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_no_peripheral_edema" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_cap_refill_3_secs" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_no_edema" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_homan_s_negative" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_no_jvd" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_apical_pulse_regular" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_radial_pulse_regular_s1_amp_s2_audible" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_wnl_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/wnl"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_exception_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/exceptions"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_exception_cardiovascular"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_heart_rhythm_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/heart_rhythm"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_heart_rhythm_cardiovascular"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_edema_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/edema"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_edema_cardiovascular"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_capillary_refill_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/capillary_refill"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_capillary_refill_cardiovascular"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_fatigue_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/fatigue"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_dizziness_cardiovascular"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/dizziness"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/ll_gastrointestinal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_25"
+                                android:layout_height="@dimen/dp_25"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_arrow_right" />
+
+                            <TextView
+                                style="@style/NursingInsideContainerText1"
+                                android:layout_gravity="center_vertical"
+                                android:text="@string/gastrointestinal"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_child_gastrointestinal"
+                            style="@style/NursingChildContainer"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_abdomen_soft_non_tender_non_distended" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_bowel_sounds_active_x4" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_tolerated_diet" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_normal_chewing_and_swallowing" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText2"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/u2022_continent" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_wnl_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/wnl"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_exception_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/exceptions_g_tube_ng_tube_incontinent_nausea_vomiting_constipation_diarrhea"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_exception_gastrointestinal"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_g_tube_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/g_tube"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_incontinent_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/incontinent"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_nausea_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/nausea"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_vomiting_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/vomiting"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_constipation_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/constipation"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_diarrhea_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/diarrhea"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <CheckBox
+                                        android:id="@+id/cb_bowel_sounds_gastrointestinal"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:buttonTint="@color/colorPrimary" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:text="@string/bowel_sounds"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                                <EditText
+                                    android:id="@+id/et_bowel_sounds_gastrointestinal"
+                                    style="@style/NursingInsideContainerEditText"
+                                    android:layout_marginStart="@dimen/dp_32"
+                                    android:layout_marginLeft="@dimen/dp_32"
+                                    android:inputType="textMultiLine" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_genito_urinary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_25"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/ic_arrow_right" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText1"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/genito_urinary"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_child_genito_urinary"
+                                style="@style/NursingChildContainer"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_urine_clear" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_no_odor" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_color_yellow_to_amber" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_continent" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_wnl_genito_urinary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/wnl"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_exceptions_ch"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/exceptions_ch"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+                                    <EditText
+                                        android:id="@+id/et_exception_gen_uni"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_incontinent_ch"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/incontinent_ch"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_urgency_ch"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/urgency_ch"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_exception_genito_urinary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/exceptions_incontinent_urgency_frequency"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_exception_genito_urinary"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary"
+                                            android:visibility="invisible" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/urine_odor"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_urine_order_genito_urinary"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary"
+                                            android:visibility="invisible" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/urine_color"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_urine_color_genito_urinary"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_integumentary"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_25"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/ic_arrow_right" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText1"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/integumentary"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_child_integumentary"
+                                style="@style/NursingChildContainer"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_warm_dry_pink" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_elastic_turgor" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_intact" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_mucous_membranes_moist_pink" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_wnl_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/wnl"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_bruising_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/bruising"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_fragile_skin_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/fragile_skin"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_rash_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/rash"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_petechiae_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/petechiae"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_acne_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/acne"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_abrasion_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/abrasion"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_exception_integumentary"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/exceptions_bruising_fragile_rash_petechiae_acne_abrasion"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_exception_integumentary"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_musculoskeletal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_25"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/ic_arrow_right" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText1"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/musculoskeletal"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_child_musculoskeletal"
+                                style="@style/NursingChildContainer"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_absence_of_joint_swelling_or_tenderness" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_normal_rom_of_all_joints" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_independent_gait" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_wnl_musculoskeletal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/wnl"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_exception_musculoskeletal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/exceptions"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_exception_musculoskeletal"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_braces_musculoskeletal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/braces"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_braces_musculoskeletal"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_mobility_musculoskeletal"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/mobility"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_mobility_musculoskeletal"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_psychosocial"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_25"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/ic_arrow_right" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText1"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/psychosocial"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_child_psychosocial"
+                                style="@style/NursingChildContainer"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_appropriate_appearance_amp_behavior" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_verbalizations_appropriate_to_situation" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_memory_intact" />
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_appropriate_affect" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_wnl_psychosocial"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/wnl"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_exception_psychosocial"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/exceptions_nonverbal"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_exception_psychosocial"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dp_5"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/ll_pain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dp_25"
+                                    android:layout_height="@dimen/dp_25"
+                                    android:layout_gravity="center_vertical"
+                                    android:src="@drawable/ic_arrow_right" />
+
+                                <TextView
+                                    style="@style/NursingInsideContainerText1"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/pain"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/ll_child_pain"
+                                style="@style/NursingChildContainer"
+                                android:orientation="horizontal"
+                                android:visibility="gone">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        style="@style/NursingInsideContainerText2"
+                                        android:layout_gravity="center_vertical"
+                                        android:text="@string/u2022_experiencing_no_pai" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_wnl_pain"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/wnl"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <CheckBox
+                                            android:id="@+id/cb_exception"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:buttonTint="@color/colorPrimary" />
+
+                                        <TextView
+                                            style="@style/NursingInsideContainerText2"
+                                            android:text="@string/exceptions"
+                                            android:textStyle="bold" />
+                                    </LinearLayout>
+
+                                    <EditText
+                                        android:id="@+id/et_exception_pain"
+                                        style="@style/NursingInsideContainerEditText"
+                                        android:layout_marginStart="@dimen/dp_32"
+                                        android:layout_marginLeft="@dimen/dp_32"
+                                        android:inputType="textMultiLine" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/NursingInsideContainer"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/NursingInsideContainerHeader"
+                    android:text="@string/nursing_notes"
+                    android:textColor="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:visibility="gone"
+                    android:layout_marginBottom="-10dp"/>
+                <LinearLayout
+                    style="@style/NursingInsideContainerInside"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/et_nursing_notes"
+                        style="@style/NursingInsideContainerEditText"
+                        android:background="#f1fcff"
+                        android:inputType="textMultiLine"
+                        android:minHeight="@dimen/dp_150" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/NursingInsideContainerSignature"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/signature"
+                    android:textColor="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/view_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_100"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_signature"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                style="@style/NursingButton"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/background_login_button"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

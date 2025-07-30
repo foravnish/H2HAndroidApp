@@ -1,0 +1,52 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.7.20'
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.3.1' // or higher
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url "http://repository.aspose.com/repo/"
+            allowInsecureProtocol = true //add this line
+        }
+//        maven { url "https://mvnrepository.com/artifact/com.lowagie/itext" }
+//        maven { url "https://repo.adobe.com/nexus/content/repositories/public/" }
+//        maven { url "https://mvnrepository.com/artifact/com.adobe.livecycle/adobe-encryption-client" }
+//        maven { url "https://mvnrepository.com/artifact/jboss/jboss-client" }
+//        maven { url "https://mvnrepository.com/artifact" }
+//        maven { url "https://mvnrepository.com/artifact/org.apache.axis/axis" }
+//        maven { url "https://mvnrepository.com/artifact/commons-codec/commons-codec" }
+//        maven { url "https://mvnrepository.com/artifact/commons-collections/commons-collections" }
+//        maven { url "https://mvnrepository.com/artifact/commons-discovery/commons-discovery" }
+//        maven { url "https://mvnrepository.com/artifact/commons-logging/commons-logging" }
+//        maven { url "https://mvnrepository.com/artifact/xerces/xercesImpl" }
+//        maven { url "https://mvnrepository.com/artifact/jaxen/jaxen" }
+//        maven { url "https://mvnrepository.com/artifact/javax.xml/jaxrpc" }
+//        maven { url "https://mvnrepository.com/artifact/log4j/log4j" }
+//        maven { url "https://mvnrepository.com/artifact/javax.mail/mail" }
+//        maven { url "https://mvnrepository.com/artifact/javax.xml.soap/saaj-api" }
+
+//        maven {
+//            url "https://pdftron-maven.s3.amazonaws.com/release"
+//        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

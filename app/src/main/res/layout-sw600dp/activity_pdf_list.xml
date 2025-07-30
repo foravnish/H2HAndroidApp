@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <RelativeLayout style="@style/ContactToolbar">
+
+        <ImageView
+            style="@style/ContactToolbarIcon"
+            android:layout_centerVertical="true"
+            android:visibility="gone" />
+
+        <TextView
+            style="@style/ContactToolbarText"
+            android:layout_centerVertical="true"
+            android:text="PDF List"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <TextView
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:id="@+id/nodata"
+        android:text="No PDF Available"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:layout_width="match_parent"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="@dimen/dp_5"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/pdfURL"/>
+    </ScrollView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_tab"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:paddingTop="3dp"
+    android:paddingBottom="3dp">
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/HomeTabLayoutIcon"
+        android:src="@drawable/ic_home" />
+
+    <TextView
+        android:id="@+id/label"
+        style="@style/HomeTabLayoutTextView"
+        android:maxLines="1"
+        android:singleLine="true"
+        tools:text="History" />
+
+</LinearLayout>
