@@ -22,6 +22,7 @@ import android.view.WindowManager
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
+import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -284,25 +285,47 @@ class DailyFlowFormActivity : BaseActivity() {
             }
         })
 
-        mEtDailyNotes.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+        mEtDailyNotes.addTextChangedListener { editable ->
+
+            editable?.let {
+                // When last char is space, return complete string
+                if (it.isNotEmpty() && it.last() == ' ') {
+                    val fullText = it.toString().trim()
+
+                    try {
+                        rvList.visibility = View.VISIBLE
+                        getCommentsList(fullText)
+//                    runOnUiThread(Runnable {
+//                        if(::mAdapter.isInitialized){
+//                            mAdapter.filter.filter(mEtNursingNote.text.toString())
+//                        }
+//                    })
+
+                    } catch (e: IndexOutOfBoundsException) {
+                    }
+                }
             }
 
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                Log.e("CountLines",countLines(mEtDailyNotes.text.toString()).toString()+"  "+mEtDailyNotes.text.toString())
-                if (s.length != 0)
-                    mtvDailyNotes.setText("2000/"+s.length.toString())
-                if(countLines(mEtDailyNotes.text.toString())>20)
-                    mEtDailyNotes.isEnabled=false
-
-                rvList.visibility = View.VISIBLE
-                getCommentsList()
-                if(::mAdapter.isInitialized)
-                  mAdapter.filter.filter(mEtDailyNotes.text.toString().trim())
-            }
-
-        })
+        }
+//        mEtDailyNotes.addTextChangedListener(object : TextWatcher {
+//            override fun afterTextChanged(s: Editable) {}
+//            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+//            }
+//
+//            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+//                Log.e("CountLines",countLines(mEtDailyNotes.text.toString()).toString()+"  "+mEtDailyNotes.text.toString())
+//                if (s.length != 0)
+//                    mtvDailyNotes.setText("2000/"+s.length.toString())
+//                if(countLines(mEtDailyNotes.text.toString())>20)
+//                    mEtDailyNotes.isEnabled=false
+//
+//                rvList.visibility = View.VISIBLE
+//                getCommentsList()
+//                if(::mAdapter.isInitialized)
+//                  mAdapter.filter.filter(mEtDailyNotes.text.toString().trim())
+//            }
+//
+//        })
 
             mLlZone1.setOnClickListener {
                 DailyFlowSheetTimeZoneForm.open(this, 0,value)
@@ -425,11 +448,11 @@ class DailyFlowFormActivity : BaseActivity() {
         }
     }
 
-    private fun getCommentsList() {
+    private fun getCommentsList(str: String) {
         var tabId="2"
         if(value==2) tabId="3"
         var mData= ArrayList<CommentData>()
-        val cursor = objDB.getComment(tabId)
+        val cursor = objDB.getComment(tabId,str)
         cursor.use {
             if (cursor.moveToFirst()) {
                 do {
@@ -443,7 +466,7 @@ class DailyFlowFormActivity : BaseActivity() {
                 } while (cursor.moveToNext())
 
                 setList(mData)
-            }
+            }else   rvList.visibility = View.GONE
         }
 
     }
@@ -451,24 +474,30 @@ class DailyFlowFormActivity : BaseActivity() {
     private fun setList(data: ArrayList<CommentData>) {
 
         try {
-            rvList.layoutManager = LinearLayoutManager(this@DailyFlowFormActivity)
-            mAdapter = CommentsListAdapter(data) { modelData,type->
-                when(type){
-                    "All"->{
-                        msgId=modelData.msgId.toInt()
-                        mEtDailyNotes.setText(modelData.msg)
-                        var length=modelData.msg.length
-                        mEtDailyNotes.setSelection(length)
-                        rvList.visibility = View.GONE
-                    }
-                    "Delete"->{
-                        objDB.deleteComment(modelData.msgId)
-                        getCommentsList()
+            if(data.size>0){
+                rvList.visibility= View.VISIBLE
+                rvList.layoutManager = LinearLayoutManager(this@DailyFlowFormActivity)
+                mAdapter = CommentsListAdapter(data) { modelData,type->
+                    when(type){
+                        "All"->{
+                            msgId=modelData.msgId.toInt()
+                            mEtDailyNotes.setText(modelData.msg)
+                            var length=modelData.msg.length
+                            mEtDailyNotes.setSelection(length)
+                            rvList.visibility = View.GONE
+                        }
+                        "Delete"->{
+                            objDB.deleteComment(modelData.msgId)
+                            getCommentsList("")
+                        }
                     }
                 }
+                rvList.adapter = mAdapter
+                mAdapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+            }else{
+                rvList.visibility= View.GONE
             }
-            rvList.adapter = mAdapter
-            mAdapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+
 
         } catch (e: Exception) {
         }

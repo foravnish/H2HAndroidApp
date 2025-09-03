@@ -57,11 +57,11 @@ class SqliteDb(context: Context?) :
         } catch (e: Exception) {
         }
     }
-    fun getComment(tabId: String): Cursor {
+    fun getComment(tabId: String,str: String): Cursor {
         var cursor: Cursor? = null
         try {
             val db = this.writableDatabase
-            val query = "select * from CommentList where tabId='$tabId'"
+            val query = "select * from CommentList where tabId='$tabId' and message LIKE '%${str}%'"
 
             cursor = db.rawQuery(query, null)
             return cursor

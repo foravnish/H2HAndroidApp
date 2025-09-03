@@ -21,9 +21,8 @@ import android.view.WindowManager
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.core.content.FileProvider
-import androidx.lifecycle.Observer
+import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.aspose.pdf.CryptoAlgorithm
@@ -32,26 +31,18 @@ import com.aspose.pdf.GoToAction
 import com.aspose.pdf.OutlineItemCollection
 import com.aspose.pdf.facades.DocumentPrivilege
 import com.crmtrail.ViewModel.CommentViewModel
-import com.google.gson.Gson
-import com.h2h.medical.Volley.BuildConfig
 import com.h2h.medical.R
-import com.h2h.medical.activities.DailyFlowFormActivity
+import com.h2h.medical.Volley.BuildConfig
 import com.h2h.medical.helper.PermissionHelper
 import com.h2h.medical.helper.SignatureView
 import com.h2h.medical.models.CommentData
 import com.h2h.medical.room.SqliteDb
-import com.h2h.medical.room.table.CommentList
 import com.h2h.medical.utils.AppPreferences
 import com.h2h.medical.utils.AppUtils
 import com.h2h.medical.utils.DateInputMask
 import com.h2h.medical.utils.ToastUtil
 import com.kamdhenuteam.Adapter.CommentsListAdapter
-import kotlinx.android.synthetic.main.activity_daily_flow_form.et_stime
-import kotlinx.android.synthetic.main.activity_daily_flow_form.et_time
 import kotlinx.android.synthetic.main.activity_nursing_assessment_form.*
-
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -2252,11 +2243,12 @@ class NursingAssessmentFormActivity : BaseActivity() {
     }
 
 
-    private fun designCheckBoxFields(         //Design parameters filled by user (Checkbox and text of form)
+    private fun designCheckBoxFields(
+        //Design parameters filled by user (Checkbox and text of form)
         y: Float,
         paint: Paint,
         bitmap: Bitmap,
-        value: String
+        value: String,
     ) {
 
         val mTextPaint = TextPaint()
@@ -2294,10 +2286,11 @@ class NursingAssessmentFormActivity : BaseActivity() {
 
     }
 
-    private fun designBulletPoints(   //Design the sub heading points of form
+    private fun designBulletPoints(
+        //Design the sub heading points of form
         y: Float,
         paint: Paint,
-        value: String
+        value: String,
     ) {
 //        changePage()
 
@@ -2305,10 +2298,11 @@ class NursingAssessmentFormActivity : BaseActivity() {
 
     }
 
-    private fun designMainHeadingPoints(  // Design main heading of the form
+    private fun designMainHeadingPoints(
+        // Design main heading of the form
         y: Float,
         paint: Paint,
-        value: String
+        value: String,
     ) {
 //        changePage()
 
@@ -2318,12 +2312,13 @@ class NursingAssessmentFormActivity : BaseActivity() {
     }
 
 
-    private fun createField(   //Design the patient information fields
+    private fun createField(
+        //Design the patient information fields
         paint: Paint,
         labelPaint: Paint,
         y: Float,
         key: String,
-        value: String
+        value: String,
     ) {
 
         page.canvas.drawText(key, xPosition, y + 10, labelPaint)
@@ -2452,17 +2447,49 @@ class NursingAssessmentFormActivity : BaseActivity() {
 
         DateInputMask(mEtDob).listen()
 
+        mEtNursingNote.addTextChangedListener { editable ->
+
+            editable?.let {
+                // When last char is space, return complete string
+                if (it.isNotEmpty() && it.last() == ' ') {
+                    val fullText = it.toString().trim()
+
+                    try {
+                        rvList.visibility = View.VISIBLE
+                        getCommentsList(fullText)
+//                    runOnUiThread(Runnable {
+//                        if(::mAdapter.isInitialized){
+//                            mAdapter.filter.filter(mEtNursingNote.text.toString())
+//                        }
+//                    })
+
+                    } catch (e: IndexOutOfBoundsException) {
+                    }
+                }
+            }
+
+        }
+
+
         mEtNursingNote.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {}
+            override fun afterTextChanged(s: Editable) {
+            }
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                rvList.visibility = View.VISIBLE
-                getCommentsList()
-                if(::mAdapter.isInitialized)
-                    mAdapter.filter.filter(mEtNursingNote.text.toString().trim())
+//                try {
+//                    rvList.visibility = View.VISIBLE
+//                    getCommentsList()
+////                    runOnUiThread(Runnable {
+////                        if(::mAdapter.isInitialized){
+////                            mAdapter.filter.filter(mEtNursingNote.text.toString())
+////                        }
+////                    })
+//
+//                } catch (e: IndexOutOfBoundsException) {
+//                }
             }
 
         })
@@ -2471,13 +2498,13 @@ class NursingAssessmentFormActivity : BaseActivity() {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(
                 s: CharSequence, start: Int,
-                count: Int, after: Int
+                count: Int, after: Int,
             ) {
             }
 
             override fun onTextChanged(
                 s: CharSequence, start: Int,
-                before: Int, count: Int
+                before: Int, count: Int,
             ) {
                 if(s.toString().length==10){
                     var lastFour=s.toString().takeLast(4).toString().toInt()
@@ -2506,10 +2533,10 @@ class NursingAssessmentFormActivity : BaseActivity() {
     }
 
 
-    private fun getCommentsList() {
+    private fun getCommentsList(str: String) {
         var tabId="1"
         var mData= ArrayList<CommentData>()
-        val cursor = objDB.getComment(tabId)
+        val cursor = objDB.getComment(tabId,str)
         cursor.use {
             if (cursor.moveToFirst()) {
                 do {
@@ -2526,7 +2553,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
                     setList(mData)
                 } catch (e: Exception) {
                 }
-            }
+            }else   rvList.visibility = View.GONE
         }
 
     }
@@ -2534,24 +2561,27 @@ class NursingAssessmentFormActivity : BaseActivity() {
     private fun setList(data: ArrayList<CommentData>) {
 
         try {
-            rvList.layoutManager = LinearLayoutManager(this@NursingAssessmentFormActivity)
-            mAdapter = CommentsListAdapter(data) { modelData,type->
-                when(type){
-                    "All"->{
-                        msgId=modelData.msgId.toInt()
-                        mEtNursingNote.setText(modelData.msg)
-                        var length=modelData.msg.length
-                        mEtNursingNote.setSelection(length)
-                        rvList.visibility = View.GONE
-                    }
-                    "Delete"->{
-                        objDB.deleteComment(modelData.msgId)
-                        getCommentsList()
+            if(data.size>0){
+                rvList.layoutManager = LinearLayoutManager(this@NursingAssessmentFormActivity)
+                mAdapter = CommentsListAdapter(data) { modelData,type->
+                    when(type){
+                        "All"->{
+                            msgId=modelData.msgId.toInt()
+                            mEtNursingNote.setText(modelData.msg)
+                            var length=modelData.msg.length
+                            mEtNursingNote.setSelection(length)
+                            rvList.visibility = View.GONE
+                        }
+                        "Delete"->{
+                            objDB.deleteComment(modelData.msgId)
+                            getCommentsList("")
+                        }
                     }
                 }
-            }
-            rvList.adapter = mAdapter
-            mAdapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+                rvList.adapter = mAdapter
+                mAdapter.stateRestorationPolicy = RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+            }else  rvList.visibility= View.GONE
+
         } catch (e: Exception) {
         }
     }

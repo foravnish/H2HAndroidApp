@@ -43,6 +43,7 @@ class CommentsListAdapter(
     }
 
     override fun getItemCount(): Int {
+        if (countryFilterList==null) return 0
         return countryFilterList.size
     }
 
