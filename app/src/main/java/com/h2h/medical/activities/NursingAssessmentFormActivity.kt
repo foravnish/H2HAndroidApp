@@ -31,11 +31,15 @@ import com.aspose.pdf.GoToAction
 import com.aspose.pdf.OutlineItemCollection
 import com.aspose.pdf.facades.DocumentPrivilege
 import com.crmtrail.ViewModel.CommentViewModel
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.h2h.medical.R
 import com.h2h.medical.Volley.BuildConfig
 import com.h2h.medical.helper.PermissionHelper
 import com.h2h.medical.helper.SignatureView
 import com.h2h.medical.models.CommentData
+import com.h2h.medical.models.DailySheetModel
+import com.h2h.medical.models.NursingAssessmentSheetModel
 import com.h2h.medical.room.SqliteDb
 import com.h2h.medical.utils.AppPreferences
 import com.h2h.medical.utils.AppUtils
@@ -152,6 +156,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
         Bitmap.createBitmap(2, 2, Bitmap.Config.ARGB_8888)
 
     private lateinit var mBtnSubmit: Button
+    private lateinit var mBtnSubmitLater: Button
 
     private var myCalendar: Calendar = Calendar.getInstance()
     private lateinit var mPermissionHelper: PermissionHelper
@@ -179,6 +184,10 @@ class NursingAssessmentFormActivity : BaseActivity() {
     val random = Random()
     var msgId = random.nextInt(99999999 - 10000000) + 10000000
     lateinit var mAdapter: CommentsListAdapter
+
+    private var nurssingAssessmentModel = NursingAssessmentSheetModel()
+    private lateinit var mAppPreferences: AppPreferences
+    private  var prefrenceKey: String="nurssing_assessment"
 
     private val datePickerDialog =
         DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -214,8 +223,191 @@ class NursingAssessmentFormActivity : BaseActivity() {
         validateCheckBox()
         mLlNeurological.performClick()
 
+        setData()
 //        mEtNursingNote.setText(""+AppPreferences.getInstance(this@NursingAssessmentFormActivity).getUserName()+"\n")
 
+
+    }
+
+    private fun setData() {
+
+        if (mAppPreferences.getNursingAssessment(prefrenceKey) != "") {
+
+            try {
+                nurssingAssessmentModel = Gson().fromJson<NursingAssessmentSheetModel>(
+                    mAppPreferences.getNursingAssessment(prefrenceKey), object :
+                        TypeToken<NursingAssessmentSheetModel?>() {}.type
+                ) as NursingAssessmentSheetModel
+
+                mEtName.setText(nurssingAssessmentModel.name)
+                mEtDob.setText(nurssingAssessmentModel.dob)
+                mEtDate.setText(nurssingAssessmentModel.date)
+                mEtNursingNote.setText(nurssingAssessmentModel.daily_notes)
+                mEtExceptionNeurological.setText(nurssingAssessmentModel.mEtExceptionNeurological)
+                mEtO2Pulmonary.setText(nurssingAssessmentModel.mEtO2Pulmonary)
+                mEtBowelSoundsGastrointestinal.setText(nurssingAssessmentModel.mEtBowelSoundsGastrointestinal)
+                mEtExceptionPulmonary.setText(nurssingAssessmentModel.mEtExceptionPulmonary)
+                mEtExceptionCardiovascular.setText(nurssingAssessmentModel.mEtExceptionCardiovascular)
+                mEtHeartRhythmCardiovascular.setText(nurssingAssessmentModel.mEtHeartRhythmCardiovascular)
+                mEtEdemaCardiovascular.setText(nurssingAssessmentModel.mEtEdemaCardiovascular)
+                mEtCapillaryRefillCardiovascular.setText(nurssingAssessmentModel.mEtCapillaryRefillCardiovascular)
+                mEtExceptionGastrointestinal.setText(nurssingAssessmentModel.mEtExceptionGastrointestinal)
+                et_exception_gen_uni.setText(nurssingAssessmentModel.et_exception_gen_uni)
+                mEtExceptionGenitoUrinary.setText(nurssingAssessmentModel.mEtExceptionGenitoUrinary)
+                mEtUrineOrderGenitoUrinary.setText(nurssingAssessmentModel.mEtUrineOrderGenitoUrinary)
+                mEtUrineColorGenitoUrinary.setText(nurssingAssessmentModel.mEtUrineColorGenitoUrinary)
+                mEtExceptionIntegumentary.setText(nurssingAssessmentModel.mEtExceptionIntegumentary)
+                mEtExceptionMusculoSkeletal.setText(nurssingAssessmentModel.mEtExceptionMusculoSkeletal)
+                mEtBracesMusculoSkeletal.setText(nurssingAssessmentModel.mEtBracesMusculoSkeletal)
+                mEtMobilityMusculoSkeletal.setText(nurssingAssessmentModel.mEtMobilityMusculoSkeletal)
+                mEtExceptionPsychosocial.setText(nurssingAssessmentModel.mEtExceptionPsychosocial)
+                mEtExceptionPain.setText(nurssingAssessmentModel.mEtExceptionPain)
+                if(nurssingAssessmentModel.mCbWnlNeurological)
+                    mCbWnlNeurological.isChecked=true
+                else mCbWnlNeurological.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionNeurological)
+                    mCbExceptionNeurological.isChecked=true
+                else mCbExceptionNeurological.isChecked=false
+
+                if(nurssingAssessmentModel.mCbWnlPulmonary)
+                    mCbWnlPulmonary.isChecked=true
+                else mCbWnlPulmonary.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionPulmonary)
+                    mCbExceptionPulmonary.isChecked=true
+                else mCbExceptionPulmonary.isChecked=false
+                if(nurssingAssessmentModel.mCbTracheostomyPulmonary)
+                    mCbTracheostomyPulmonary.isChecked=true
+                else mCbTracheostomyPulmonary.isChecked=false
+                if(nurssingAssessmentModel.mCbO2Pulmonary)
+                    mCbO2Pulmonary.isChecked=true
+                else mCbO2Pulmonary.isChecked=false
+
+
+                if(nurssingAssessmentModel.mCbWnlCardiovascular)
+                    mCbWnlCardiovascular.isChecked=true
+                else mCbWnlCardiovascular.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionCardiovascular)
+                    mCbExceptionCardiovascular.isChecked=true
+                else mCbExceptionCardiovascular.isChecked=false
+                if(nurssingAssessmentModel.mCbHeartRhythmCardiovascular)
+                    mCbHeartRhythmCardiovascular.isChecked=true
+                else mCbHeartRhythmCardiovascular.isChecked=false
+                if(nurssingAssessmentModel.mCbEdemaCardiovascular)
+                    mCbEdemaCardiovascular.isChecked=true
+                else mCbEdemaCardiovascular.isChecked=false
+                if(nurssingAssessmentModel.mCbCapillaryRefillCardiovascular)
+                    mCbCapillaryRefillCardiovascular.isChecked=true
+                else mCbCapillaryRefillCardiovascular.isChecked=false
+                if(nurssingAssessmentModel.mCbFatigueCardiovascular)
+                    mCbFatigueCardiovascular.isChecked=true
+                else mCbFatigueCardiovascular.isChecked=false
+                if(nurssingAssessmentModel.mCbDizzinessCardiovascular)
+                    mCbDizzinessCardiovascular.isChecked=true
+                else mCbDizzinessCardiovascular.isChecked=false
+
+                if(nurssingAssessmentModel.mCbWnlGastrointestinal)
+                    mCbWnlGastrointestinal.isChecked=true
+                else mCbWnlGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionGastrointestinal)
+                    mCbExceptionGastrointestinal.isChecked=true
+                else mCbExceptionGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbGTubeGastrointestinal)
+                    mCbGTubeGastrointestinal.isChecked=true
+                else mCbGTubeGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbIncontinentGastrointestinal)
+                    mCbIncontinentGastrointestinal.isChecked=true
+                else mCbIncontinentGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbNauseaGastrointestinal)
+                    mCbNauseaGastrointestinal.isChecked=true
+                else mCbNauseaGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbVomitingGastrointestinal)
+                    mCbVomitingGastrointestinal.isChecked=true
+                else mCbVomitingGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbConstipationGastrointestinal)
+                    mCbConstipationGastrointestinal.isChecked=true
+                else mCbConstipationGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbDiarrheaGastrointestinal)
+                    mCbDiarrheaGastrointestinal.isChecked=true
+                else mCbDiarrheaGastrointestinal.isChecked=false
+                if(nurssingAssessmentModel.mCbBowelSoundsGastrointestinal)
+                    mCbBowelSoundsGastrointestinal.isChecked=true
+                else mCbBowelSoundsGastrointestinal.isChecked=false
+
+                if(nurssingAssessmentModel.mCbWnlGenitoUrinary)
+                    mCbWnlGenitoUrinary.isChecked=true
+                else mCbWnlGenitoUrinary.isChecked=false
+                if(nurssingAssessmentModel.cb_exceptions_ch)
+                    cb_exceptions_ch.isChecked=true
+                else cb_exceptions_ch.isChecked=false
+                if(nurssingAssessmentModel.cb_incontinent_ch)
+                    cb_incontinent_ch.isChecked=true
+                else cb_incontinent_ch.isChecked=false
+                if(nurssingAssessmentModel.cb_urgency_ch)
+                    cb_urgency_ch.isChecked=true
+                else cb_urgency_ch.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionGenitoUrinary)
+                    mCbExceptionGenitoUrinary.isChecked=true
+                else mCbExceptionGenitoUrinary.isChecked=false
+
+                if(nurssingAssessmentModel.mCbWnlIntegumentary)
+                    mCbWnlIntegumentary.isChecked=true
+                else mCbWnlIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbBruisingIntegumentary)
+                    mCbBruisingIntegumentary.isChecked=true
+                else mCbBruisingIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbFragileSkinIntegumentary)
+                    mCbFragileSkinIntegumentary.isChecked=true
+                else mCbFragileSkinIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbRashIntegumentary)
+                    mCbRashIntegumentary.isChecked=true
+                else mCbRashIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbPetechiaeIntegumentary)
+                    mCbPetechiaeIntegumentary.isChecked=true
+                else mCbPetechiaeIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbAcneIntegumentary)
+                    mCbAcneIntegumentary.isChecked=true
+                else mCbAcneIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbAbrasionIntegumentary)
+                    mCbAbrasionIntegumentary.isChecked=true
+                else mCbAbrasionIntegumentary.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionIntegumentary)
+                    mCbExceptionIntegumentary.isChecked=true
+                else mCbExceptionIntegumentary.isChecked=false
+
+                if(nurssingAssessmentModel.mCbWnlMusculoSkeletal)
+                    mCbWnlMusculoSkeletal.isChecked=true
+                else mCbWnlMusculoSkeletal.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionMusculoSkeletal)
+                    mCbExceptionMusculoSkeletal.isChecked=true
+                else mCbExceptionMusculoSkeletal.isChecked=false
+                if(nurssingAssessmentModel.mCbBracesMusculoSkeletal)
+                    mCbBracesMusculoSkeletal.isChecked=true
+                else mCbBracesMusculoSkeletal.isChecked=false
+                if(nurssingAssessmentModel.mCbMobilityMusculoSkeletal)
+                    mCbMobilityMusculoSkeletal.isChecked=true
+                else mCbMobilityMusculoSkeletal.isChecked=false
+
+                if(nurssingAssessmentModel.mCbWnlPsychosocial)
+                    mCbWnlPsychosocial.isChecked=true
+                else mCbWnlPsychosocial.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionPsychosocial)
+                    mCbExceptionPsychosocial.isChecked=true
+                else mCbExceptionPsychosocial.isChecked=false
+
+
+                if(nurssingAssessmentModel.mCbWnlPain)
+                    mCbWnlPain.isChecked=true
+                else mCbWnlPain.isChecked=false
+                if(nurssingAssessmentModel.mCbExceptionPain)
+                    mCbExceptionPain.isChecked=true
+                else mCbExceptionPain.isChecked=false
+
+
+                
+            } catch (e: java.lang.Exception) {
+                e.printStackTrace()
+            }
+        }
 
     }
 
@@ -233,6 +425,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
                 mCbWnlNeurological.isChecked = false
             }
         }
+
 
         mCbWnlPulmonary.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked) {
@@ -2024,6 +2217,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
                 shareIntent.type = "application/pdf"
                 startActivity(Intent.createChooser(shareIntent, "share.."))
 
+                mAppPreferences.setNursingAssessment("",prefrenceKey)
                 finish()
             }
             else{
@@ -2079,6 +2273,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
                 shareIntent.putExtra(Intent.EXTRA_SUBJECT, fileName.replace(".pdf", ""))
                 startActivity(Intent.createChooser(shareIntent, "SHARE DAILY REPORT"))
 
+                mAppPreferences.setNursingAssessment("",prefrenceKey)
                 finish()
             }
         } catch (exception: Exception) {
@@ -2426,6 +2621,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
         mCbExceptionPain = findViewById(R.id.cb_exception)
         mEtExceptionPain = findViewById(R.id.et_exception_pain)
         mBtnSubmit = findViewById(R.id.btn_submit)
+        mBtnSubmitLater= findViewById(R.id.btn_submit_later)
         mViewSignature = findViewById(R.id.view_signature)
         mIvSignature = findViewById(R.id.iv_signature)
         mEtNursingNote = findViewById(R.id.et_nursing_notes)
@@ -2494,6 +2690,183 @@ class NursingAssessmentFormActivity : BaseActivity() {
 
         })
 
+        mBtnSubmitLater.setOnClickListener {
+            nurssingAssessmentModel.name = mEtName.text.toString().trim()
+            nurssingAssessmentModel.dob = mEtDob.text.toString().trim()
+            nurssingAssessmentModel.date = mEtDate.text.toString().trim()
+            nurssingAssessmentModel.daily_notes = mEtNursingNote.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionNeurological = mEtExceptionNeurological.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionPulmonary= mEtExceptionPulmonary.text.toString().trim()
+            nurssingAssessmentModel.mEtO2Pulmonary= mEtO2Pulmonary.text.toString().trim()
+            nurssingAssessmentModel.mEtBowelSoundsGastrointestinal= mEtBowelSoundsGastrointestinal.text.toString().trim()
+
+            nurssingAssessmentModel.mEtExceptionCardiovascular = mEtExceptionCardiovascular.text.toString().trim()
+            nurssingAssessmentModel.mEtHeartRhythmCardiovascular  = mEtHeartRhythmCardiovascular.text.toString().trim()
+            nurssingAssessmentModel.mEtEdemaCardiovascular = mEtEdemaCardiovascular.text.toString().trim()
+            nurssingAssessmentModel.mEtCapillaryRefillCardiovascular = mEtCapillaryRefillCardiovascular.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionGastrointestinal = mEtExceptionGastrointestinal.text.toString().trim()
+            nurssingAssessmentModel.et_exception_gen_uni = et_exception_gen_uni.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionGenitoUrinary = mEtExceptionGenitoUrinary.text.toString().trim()
+            nurssingAssessmentModel.mEtUrineOrderGenitoUrinary = mEtUrineOrderGenitoUrinary.text.toString().trim()
+            nurssingAssessmentModel.mEtUrineColorGenitoUrinary = mEtUrineColorGenitoUrinary.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionIntegumentary= mEtExceptionIntegumentary.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionMusculoSkeletal= mEtExceptionMusculoSkeletal.text.toString().trim()
+            nurssingAssessmentModel.mEtBracesMusculoSkeletal = mEtBracesMusculoSkeletal.text.toString().trim()
+            nurssingAssessmentModel.mEtMobilityMusculoSkeletal = mEtMobilityMusculoSkeletal.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionPsychosocial= mEtExceptionPsychosocial.text.toString().trim()
+            nurssingAssessmentModel.mEtExceptionPain= mEtExceptionPain.text.toString().trim()
+
+            if (mCbWnlNeurological.isChecked)
+                nurssingAssessmentModel.mCbWnlNeurological=true
+            else nurssingAssessmentModel.mCbWnlNeurological=false
+
+            if(mCbExceptionNeurological.isChecked)
+                nurssingAssessmentModel.mCbExceptionNeurological=true
+            else nurssingAssessmentModel.mCbExceptionNeurological=false
+
+            if(mCbWnlPulmonary.isChecked)
+                nurssingAssessmentModel.mCbWnlPulmonary=true
+            else nurssingAssessmentModel.mCbWnlPulmonary=false
+
+            if(mCbExceptionPulmonary.isChecked)
+                nurssingAssessmentModel.mCbExceptionPulmonary=true
+            else nurssingAssessmentModel.mCbExceptionPulmonary=false
+
+            if(mCbTracheostomyPulmonary.isChecked)
+                nurssingAssessmentModel.mCbTracheostomyPulmonary=true
+            else nurssingAssessmentModel.mCbTracheostomyPulmonary=false
+
+            if(mCbO2Pulmonary.isChecked)
+                nurssingAssessmentModel.mCbO2Pulmonary=true
+            else nurssingAssessmentModel.mCbO2Pulmonary=false
+
+
+
+
+
+            if(mCbWnlCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbWnlCardiovascular=true
+            else nurssingAssessmentModel.mCbWnlCardiovascular=false
+            if(mCbExceptionCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbExceptionCardiovascular=true
+            else nurssingAssessmentModel.mCbExceptionCardiovascular=false
+            if(mCbHeartRhythmCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbHeartRhythmCardiovascular=true
+            else nurssingAssessmentModel.mCbHeartRhythmCardiovascular=false
+            if(mCbEdemaCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbEdemaCardiovascular=true
+            else nurssingAssessmentModel.mCbEdemaCardiovascular=false
+            if(mCbCapillaryRefillCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbCapillaryRefillCardiovascular=true
+            else nurssingAssessmentModel.mCbCapillaryRefillCardiovascular=false
+            if(mCbFatigueCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbFatigueCardiovascular=true
+            else nurssingAssessmentModel.mCbFatigueCardiovascular=false
+            if(mCbDizzinessCardiovascular.isChecked)
+                nurssingAssessmentModel.mCbDizzinessCardiovascular=true
+            else nurssingAssessmentModel.mCbDizzinessCardiovascular=false
+
+            if(mCbWnlGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbWnlGastrointestinal=true
+            else nurssingAssessmentModel.mCbWnlGastrointestinal=false
+            if(mCbExceptionGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbExceptionGastrointestinal=true
+            else nurssingAssessmentModel.mCbExceptionGastrointestinal=false
+            if(mCbGTubeGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbGTubeGastrointestinal=true
+            else nurssingAssessmentModel.mCbGTubeGastrointestinal=false
+            if(mCbIncontinentGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbIncontinentGastrointestinal=true
+            else nurssingAssessmentModel.mCbIncontinentGastrointestinal=false
+            if(mCbNauseaGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbNauseaGastrointestinal=true
+            else nurssingAssessmentModel.mCbNauseaGastrointestinal=false
+            if(mCbVomitingGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbVomitingGastrointestinal=true
+            else nurssingAssessmentModel.mCbVomitingGastrointestinal=false
+            if(mCbConstipationGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbConstipationGastrointestinal=true
+            else nurssingAssessmentModel.mCbConstipationGastrointestinal=false
+            if(mCbDiarrheaGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbDiarrheaGastrointestinal=true
+            else nurssingAssessmentModel.mCbDiarrheaGastrointestinal=false
+            if(mCbBowelSoundsGastrointestinal.isChecked)
+                nurssingAssessmentModel.mCbBowelSoundsGastrointestinal=true
+            else nurssingAssessmentModel.mCbBowelSoundsGastrointestinal=false
+
+            if(mCbWnlGenitoUrinary.isChecked)
+                nurssingAssessmentModel.mCbWnlGenitoUrinary=true
+            else nurssingAssessmentModel.mCbWnlGenitoUrinary=false
+            if(cb_exceptions_ch.isChecked)
+                nurssingAssessmentModel.cb_exceptions_ch=true
+            else nurssingAssessmentModel.cb_exceptions_ch=false
+            if(cb_incontinent_ch.isChecked)
+                nurssingAssessmentModel.cb_incontinent_ch=true
+            else nurssingAssessmentModel.cb_incontinent_ch=false
+            if(cb_urgency_ch.isChecked)
+                nurssingAssessmentModel.cb_urgency_ch=true
+            else nurssingAssessmentModel.cb_urgency_ch=false
+            if(mCbExceptionGenitoUrinary.isChecked)
+                nurssingAssessmentModel.mCbExceptionGenitoUrinary=true
+            else nurssingAssessmentModel.mCbExceptionGenitoUrinary=false
+
+            if(mCbWnlIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbWnlIntegumentary=true
+            else nurssingAssessmentModel.mCbWnlIntegumentary=false
+            if(mCbBruisingIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbBruisingIntegumentary=true
+            else nurssingAssessmentModel.mCbBruisingIntegumentary=false
+            if(mCbFragileSkinIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbFragileSkinIntegumentary=true
+            else nurssingAssessmentModel.mCbFragileSkinIntegumentary=false
+            if(mCbRashIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbRashIntegumentary=true
+            else nurssingAssessmentModel.mCbRashIntegumentary=false
+            if(mCbPetechiaeIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbPetechiaeIntegumentary=true
+            else nurssingAssessmentModel.mCbPetechiaeIntegumentary=false
+            if(mCbAcneIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbAcneIntegumentary=true
+            else nurssingAssessmentModel.mCbAcneIntegumentary=false
+            if(mCbAbrasionIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbAbrasionIntegumentary=true
+            else nurssingAssessmentModel.mCbAbrasionIntegumentary=false
+            if(mCbExceptionIntegumentary.isChecked)
+                nurssingAssessmentModel.mCbExceptionIntegumentary=true
+            else nurssingAssessmentModel.mCbExceptionIntegumentary=false
+
+            if(mCbWnlMusculoSkeletal.isChecked)
+                nurssingAssessmentModel.mCbWnlMusculoSkeletal=true
+            else nurssingAssessmentModel.mCbWnlMusculoSkeletal=false
+            if(mCbExceptionMusculoSkeletal.isChecked)
+                nurssingAssessmentModel.mCbExceptionMusculoSkeletal=true
+            else nurssingAssessmentModel.mCbExceptionMusculoSkeletal=false
+            if(mCbBracesMusculoSkeletal.isChecked)
+                nurssingAssessmentModel.mCbBracesMusculoSkeletal=true
+            else nurssingAssessmentModel.mCbBracesMusculoSkeletal=false
+            if(mCbMobilityMusculoSkeletal.isChecked)
+                nurssingAssessmentModel.mCbMobilityMusculoSkeletal=true
+            else nurssingAssessmentModel.mCbMobilityMusculoSkeletal=false
+
+            if(mCbWnlPsychosocial.isChecked)
+                nurssingAssessmentModel.mCbWnlPsychosocial=true
+            else nurssingAssessmentModel.mCbWnlPsychosocial=false
+            if(mCbExceptionPsychosocial.isChecked)
+                nurssingAssessmentModel.mCbExceptionPsychosocial=true
+            else nurssingAssessmentModel.mCbExceptionPsychosocial=false
+
+            if(mCbWnlPain.isChecked)
+                nurssingAssessmentModel.mCbWnlPain=true
+            else nurssingAssessmentModel.mCbWnlPain=false
+            if(mCbExceptionPain.isChecked)
+                nurssingAssessmentModel.mCbExceptionPain=true
+            else nurssingAssessmentModel.mCbExceptionPain=false
+
+            val json: String? = Gson().toJson(nurssingAssessmentModel)
+            mAppPreferences.setNursingAssessment(json.toString(),prefrenceKey)
+            finish()
+        }
+
         mEtDob.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(
@@ -2519,7 +2892,7 @@ class NursingAssessmentFormActivity : BaseActivity() {
 
             }
         })
-
+        mAppPreferences = AppPreferences.getInstance(this)
         mPermissionHelper = PermissionHelper(this, this)
         permissions = arrayOf(
             android.Manifest.permission.READ_EXTERNAL_STORAGE,

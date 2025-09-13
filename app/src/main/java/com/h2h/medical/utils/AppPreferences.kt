@@ -136,9 +136,14 @@ class AppPreferences {
 
 
 
+    fun setNursingAssessment(value: String,key:String) {
+        mEditor!!.putString(key, value)
+        mEditor!!.commit()
+    }
 
-
-
+    fun getNursingAssessment(key:String): String {
+        return mPreferences!!.getString(key, "")!!
+    }
 
     fun setDailyFlowForm(value: String,key:String) {
         mEditor!!.putString(key, value)

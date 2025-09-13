@@ -1701,13 +1701,44 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_submit"
-                style="@style/NursingButton"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/background_login_button"
-                android:text="@string/submit"
-                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/lytSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/btn_submit_later"
+                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_login_button"
+                    android:singleLine="true"
+                    android:text="Submit Later"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/btn_submit"
+
+                    android:layout_height="wrap_content"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:singleLine="true"
+                    android:background="@drawable/background_login_button"
+                    android:text="Submit"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </LinearLayout>
