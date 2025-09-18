@@ -2909,24 +2909,27 @@ class NursingAssessmentFormActivity : BaseActivity() {
     private fun getCommentsList(str: String) {
         var tabId="1"
         var mData= ArrayList<CommentData>()
-        val cursor = objDB.getComment(tabId,str)
-        cursor.use {
-            if (cursor.moveToFirst()) {
-                do {
-                    val message = cursor.getString(cursor.getColumnIndexOrThrow("message"))
-                    val msgId = cursor.getString(cursor.getColumnIndexOrThrow("msgId"))
+        try {
+            val cursor = objDB.getComment(tabId,str)
+            cursor.use {
+                if (cursor.moveToFirst()) {
+                    do {
+                        val message = cursor.getString(cursor.getColumnIndexOrThrow("message"))
+                        val msgId = cursor.getString(cursor.getColumnIndexOrThrow("msgId"))
 
-                    CommentData(message,msgId).let {
-                        mData.add(it)
+                        CommentData(message,msgId).let {
+                            mData.add(it)
+                        }
+
+                    } while (cursor.moveToNext())
+
+                    try {
+                        setList(mData)
+                    } catch (e: Exception) {
                     }
-
-                } while (cursor.moveToNext())
-
-                try {
-                    setList(mData)
-                } catch (e: Exception) {
-                }
-            }else   rvList.visibility = View.GONE
+                }else   rvList.visibility = View.GONE
+            }
+        } catch (e: Exception) {
         }
 
     }

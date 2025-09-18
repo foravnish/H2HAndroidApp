@@ -452,21 +452,24 @@ class DailyFlowFormActivity : BaseActivity() {
         var tabId="2"
         if(value==2) tabId="3"
         var mData= ArrayList<CommentData>()
-        val cursor = objDB.getComment(tabId,str)
-        cursor.use {
-            if (cursor.moveToFirst()) {
-                do {
-                    val message = cursor.getString(cursor.getColumnIndexOrThrow("message"))
-                    val msgId = cursor.getString(cursor.getColumnIndexOrThrow("msgId"))
+        try {
+            val cursor = objDB.getComment(tabId,str)
+            cursor.use {
+                if (cursor.moveToFirst()) {
+                    do {
+                        val message = cursor.getString(cursor.getColumnIndexOrThrow("message"))
+                        val msgId = cursor.getString(cursor.getColumnIndexOrThrow("msgId"))
 
-                    CommentData(message,msgId).let {
-                        mData.add(it)
-                    }
+                        CommentData(message,msgId).let {
+                            mData.add(it)
+                        }
 
-                } while (cursor.moveToNext())
+                    } while (cursor.moveToNext())
 
-                setList(mData)
-            }else   rvList.visibility = View.GONE
+                    setList(mData)
+                }else   rvList.visibility = View.GONE
+            }
+        } catch (e: Exception) {
         }
 
     }
